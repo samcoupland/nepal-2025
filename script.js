@@ -1,5 +1,5 @@
 // Fundraising data
-let currentRaised = 60;
+let currentRaised = 20;
 const target = 600;
 
 // Initialize the page
@@ -77,23 +77,23 @@ function animateToAmount(targetAmount) {
     animate();
 }
 
-// Add some interactive elements
 document.addEventListener('DOMContentLoaded', function() {
-    // Add click counter for fun
-    let clickCount = 0;
     
-    document.getElementById('currentAmount').addEventListener('click', function() {
-        clickCount++;
-        if (clickCount >= 5) {
-            this.style.animation = 'none';
-            setTimeout(() => {
-                this.style.animation = '';
-                this.style.transform = 'scale(1.2) rotate(360deg)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 500);
-            }, 10);
-            clickCount = 0;
-        }
+    const infoBox = document.querySelectorAll('.info-box');
+    
+    infoBox.forEach((el) => {
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'none';
+            el.classList.remove('hovered');
+        });
+    })  
+
+    infoBox.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+            const randomRotate = (Math.random() * 6 - 3).toFixed(2); // -3deg to +3deg
+            const randomScale = (Math.random() * 0.1 + 1.02).toFixed(2); // 1.02 to 1.12
+            el.style.transform = `scale(${randomScale}) rotate(${randomRotate}deg)`;
+            el.classList.add('hovered');
+        }); 
     });
 });

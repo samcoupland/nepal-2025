@@ -5,84 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Nepal Fundraiser 2025">
     <meta property="og:description" content="Raising money for rural Nepali villages and a local church in Pokhara">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="img/bike+nepal.png">
     <meta property="og:url" content="https://samcoupland.com/nepal-2025/">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <title>Nepal Fundraiser 2025</title>
 </head>
 <body>
-  <div class="container">
-    <a href="https://givealittle.co/c/76x2CZUWVclXtYZFkgKdEm" class="donate-btn">DONATE</a>
+  <!-- Background SVG with animated bike trail -->
+  <svg class="background-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <!-- Define the dashed line pattern -->
+        <pattern id="dashedPattern" patternUnits="userSpaceOnUse" width="20" height="4">
+            <rect width="8" height="4" fill="rgba(44, 62, 80, 0.3)"/>
+        </pattern>
+    </defs>
     
-    <div class="raised-section">
-        <div class="raised-text">WE HAVE RAISED</div>
-        <div class="amount" id="currentAmount">£0</div>
-        
-        <div class="progress-section">
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            
-            <div class="target-info">
-                <span id="progressText">£0 of £0 target</span> • <span id="percentageText">0%</span>
-            </div>
-            
-            <div class="thank-you">Thank you</div>
-        </div>
-    </div>
+    <!-- Curved trail path -->
+    <path id="bikePath" d="M50,600 Q200,400 350,550 T650,400 Q800,350 950,450 Q1100,550 1150,500" 
+          stroke="url(#dashedPattern)" 
+          stroke-width="8" 
+          fill="none">
+    </path>
+    
+    <!-- Simple bike icon -->
+    <g id="bike" transform="translate(5,-38), scale(0.05)">
+      <path d="M223.936 484.288h34.496v308.544h-34.496z" fill="#CFD7DB" /><path d="M86.848 621.248h308.544v34.624H86.848z" fill="#CFD7DB" /><path d="M120 541.632l24.384-24.32 218.048 218.24-24.448 24.32z" fill="#CFD7DB" /><path d="M144.384 760l-24.384-24.32L337.856 517.12l24.448 24.384z" fill="#CFD7DB" /><path d="M241.152 820.608A182.272 182.272 0 0 1 59.072 638.592c0-100.416 81.664-182.08 182.08-182.08s182.08 81.6 182.08 182.08a182.272 182.272 0 0 1-182.08 182.016z m0-325.44a143.616 143.616 0 0 0-143.36 143.424c0 78.976 64.32 143.232 143.36 143.232s143.36-64.256 143.36-143.232a143.616 143.616 0 0 0-143.36-143.424z" fill="#5F7B89" /><path d="M774.144 484.288h34.56v308.544h-34.56z" fill="#CFD7DB" /><path d="M637.184 621.248h308.48v34.624h-308.48z" fill="#CFD7DB" /><path d="M670.272 541.568l24.384-24.32 217.92 218.432-24.448 24.32z" fill="#CFD7DB" /><path d="M694.656 760.064l-24.448-24.32 217.728-218.624 24.448 24.32z" fill="#CFD7DB" /><path d="M791.424 820.608A182.272 182.272 0 0 1 609.28 638.592a182.272 182.272 0 0 1 182.144-182.08 182.272 182.272 0 0 1 182.016 182.08 182.208 182.208 0 0 1-182.016 182.016z m0-325.44a143.616 143.616 0 0 0-143.424 143.424 143.552 143.552 0 0 0 143.424 143.232 143.488 143.488 0 0 0 143.36-143.232 143.616 143.616 0 0 0-143.36-143.424z" fill="#5F7B89" /><path d="M343.936 304.768l35.52-13.12 143.68 388.864-35.584 13.12z" fill="#E51B54" /><path d="M229.376 649.728l33.088 18.368 141.952-266.048-33.152-18.304zM500.928 642.752l34.304 17.6 157.952-274.944-34.368-17.6z" fill="#E51B54" /><path d="M816.256 675.648l-35.136 14.08L592 217.6l47.488 4.928z" fill="#E51B54" /><path d="M387.904 344.192h291.008v37.824H387.904z" fill="#E51B54" /><path d="M684.992 260.608h-1.152l-64.64-3.648 2.24-40.576 64 3.648c9.792-0.32 40.192-4.288 40.192-42.56h40.64c0 60.992-48.64 83.136-81.28 83.136z" fill="#E51B54" /><path d="M702.528 258.176l-4.16-40.384c6.4-0.768 27.328-6.144 27.328-40.32h40.64c-0.064 59.072-41.792 78.656-63.808 80.704z" fill="#4D5462" /><path d="M434.624 229.44l-120.64 24.896c-17.984 3.84-29.44 22.4-25.408 41.6 3.968 19.2 11.84 33.792 39.808 27.968l2.176-1.6c10.752-1.792 28.416-12.16 45.824-28.16 8-7.424 14.848-14.848 20.288-21.824l2.24-1.792c18.048-3.712 75.072-7.808 74.752-17.408l-0.832-4.16c-1.024-6.016-5.76-26.304-38.208-19.52z" fill="#811E4D" /><path d="M575.296 675.136c0 38.272-35.2 61.248-78.528 61.248l-202.816-42.752c-44.416-12.736-78.592-17.856-78.592-62.4v16.256c0-38.4 27.712-41.728 71.04-41.728h210.368c43.328 0 78.528 30.976 78.528 69.376z" fill="#A31A53" />
 
-    <div class="info-section">
-        
-        <div class="info-item">
-            <div class="info-box nepal">
-                <img class="info-image" src="img/landscape.jpeg" alt="Mountains in Nepal with sun coming over, sunrise"></img>
-            </div>
-            <div class="info-text">
-              <span>I am raising money to support communities in Nepal.</span>
-              <span>100% of your money will go towards the work of the project.</span>
-            </div>
-        </div>
-        
-        <div class="info-item">
-            <div class="info-box village">
-                <img class="info-image" src="img/nepal-people.jpeg" alt="Nepali people being given new shoes"></img>
-            </div>
-            <div class="info-text">
-                  Your money will provide shoes, education equipment and hygiene products to people in rural villages. Also music and sound equipment for a local church in Pokhara.
-            </div>
-        </div>
-        
-        <div class="info-item">
-            <div class="info-box cycling">
-              <img class="info-image" src="img/cycle.jpeg" alt="Upside down bike"></img>
-            </div>
-            <div class="info-text">
-              <div class="info-text-flex">
-                <span>THE CHALLENGE</span>
-                <span>12 hours</span>
-                <span>on a stationary bike</span>
-                <span>in Portsmouth city center!</span>
-                <span>How many miles will I cycle?</span>
-                <span>Not much if try riding the bike like this...</span>
+      <!-- Animate bike along the path -->
+      <animateMotion dur="15s" rotate="auto" fill="freeze">
+          <mpath href="#bikePath"/>
+      </animateMotion>
+    </g>
+    
+    <!-- Some decorative elements -->
+    <g opacity="0.3">
+      <!-- Mountains in background -->
+      <path d="M0,700 L100,500 L200,600 L300,450 L400,550 L500,400 L600,500 L700,350 L800,450 L900,300 L1000,400 L1100,250 L1200,350 L1200,800 L0,800 Z" 
+            fill="rgba(78, 205, 196, 0.3)"/>
+      
+      <!-- Clouds -->
+      <path class="cloud" transform="translate(100, 100), scale(1.5)"
+      d="M40 60H100C110 60 115 50 110 42C107 37 102 34 97 34C95 21 84 12 70 12C60 12 52 18 48 26C41 26 35 32 35 40C28 40 24 45 24 50C24 55 28 60 40 60Z"
+      />
+      <path class="cloud" transform="translate(115, 95), scale(1.5)"
+      d="M40 60H100C110 60 115 50 110 42C107 37 102 34 97 34C95 21 84 12 70 12C60 12 52 18 48 26C41 26 35 32 35 40C28 40 24 45 24 50C24 55 28 60 40 60Z"
+      />
+      <path class="cloud" transform="translate(600, 50), scale(1.5)"
+      d="M40 60H100C110 60 115 50 110 42C107 37 102 34 97 34C95 21 84 12 70 12C60 12 52 18 48 26C41 26 35 32 35 40C28 40 24 45 24 50C24 55 28 60 40 60Z"
+      />
+      <path class="cloud" transform="translate(615, 45), scale(1.5)"
+      d="M40 60H100C110 60 115 50 110 42C107 37 102 34 97 34C95 21 84 12 70 12C60 12 52 18 48 26C41 26 35 32 35 40C28 40 24 45 24 50C24 55 28 60 40 60Z"
+      />
+      <path class="cloud" transform="translate(950, 120), scale(1.5)"
+      d="M40 60H100C110 60 115 50 110 42C107 37 102 34 97 34C95 21 84 12 70 12C60 12 52 18 48 26C41 26 35 32 35 40C28 40 24 45 24 50C24 55 28 60 40 60Z"
+      />
+      <path class="cloud" transform="translate(965, 115), scale(1.5)"
+      d="M40 60H100C110 60 115 50 110 42C107 37 102 34 97 34C95 21 84 12 70 12C60 12 52 18 48 26C41 26 35 32 35 40C28 40 24 45 24 50C24 55 28 60 40 60Z"
+      />
+    </g>
+  </svg>
+  <div class="page-wrapper">
+    <div class="container">
+      <a href="https://givealittle.co/c/76x2CZUWVclXtYZFkgKdEm" class="donate-btn">DONATE</a>
+      
+      <div class="raised-section">
+          <div class="raised-text">WE HAVE RAISED</div>
+          <div class="amount" id="currentAmount">£0</div>
+          
+          <div class="progress-section">
+              <div class="progress-container">
+                  <div class="progress-bar" id="progressBar"></div>
               </div>
-              <div class="svg-container">
-                <svg width="100" height="50" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" class="bold-arrow">
-                  <polygon points="30,25 70,5 70,20 100,20 100,30 70,30 70,45" />
-                </svg>
+              
+              <div class="target-info">
+                  <span id="progressText">£0 of £0 target</span> • <span id="percentageText">0%</span>
               </div>
-            </div>
-        </div>
+              
+              <div class="thank-you">Thank you</div>
+          </div>
+      </div>
+  
+      <div class="info-section">
+          
+          <div class="info-item">
+              <div class="info-box nepal">
+                  <img class="info-image" src="img/landscape.jpeg" alt="Mountains in Nepal with sun coming over, sunrise"></img>
+              </div>
+              <div class="info-text">
+                <span>I am raising money to support communities in Nepal.</span>
+                <span>100% of your money will go towards the work of the project.</span>
+              </div>
+          </div>
+          
+          <div class="info-item">
+              <div class="info-box village">
+                  <img class="info-image" src="img/nepal-people.jpeg" alt="Nepali people being given new shoes"></img>
+              </div>
+              <div class="info-text">
+                    Your money will provide shoes, education equipment and hygiene products to people in rural villages. Also music and sound equipment for a local church in Pokhara.
+              </div>
+          </div>
+          
+          <div class="info-item">
+              <div class="info-box cycling">
+                <img class="info-image" src="img/cycle.jpeg" alt="Upside down bike"></img>
+              </div>
+              <div class="info-text">
+                <div class="info-text-flex">
+                  <span>THE CHALLENGE</span>
+                  <span>12 hours</span>
+                  <span>on a stationary bike</span>
+                  <span>in Portsmouth city center!</span>
+                  <span>How many miles will I cycle?</span>
+                  <span>Not much if try riding the bike like this...</span>
+                </div>
+                <div class="svg-container">
+                  <svg width="100" height="100" viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" class="bold-arrow">
+                    <polygon points="30,25 70,5 70,20 100,20 100,30 70,30 70,45" />
+                  </svg>
+                </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="church-info">
+          <span>Working in partnership with</span>
+          <div class="image-container">
+            <a class="" href="https://family.church/">
+              <img class="" src="img/fc logo.png" alt="family church">
+            </a>
+          </div>
+      </div>
+  
+      <a href="https://givealittle.co/c/76x2CZUWVclXtYZFkgKdEm" class="donate-btn bottom-donate">DONATE</a>
     </div>
-
-    <div class="church-info">
-        <span>Working in partnership with</span>
-        <a href="https://family.church/">
-          <img class="" src="img/fc logo.png" alt="family church">
-        </a>
-    </div>
-
-    <a href="https://givealittle.co/c/76x2CZUWVclXtYZFkgKdEm" class="donate-btn bottom-donate">DONATE</a>
   </div>
   <script src="script.js"></script>
 </body>
