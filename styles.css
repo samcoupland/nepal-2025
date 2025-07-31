@@ -1,0 +1,243 @@
+:root {
+  /* Color Variables */
+  --primary-color: #FF6B35;
+  --secondary-color: #4ECDC4;
+  --accent-color: #FFE66D;
+  --background-color: #F7F3E9;
+  --text-color: #2C3E50;
+  --button-color: #E74C3C;
+  --button-hover: #C0392B;
+  --progress-bg: #ECF0F1;
+  --progress-fill: #27AE60;
+  --border-color: #2C3E50;
+  --shadow-color: rgba(44, 62, 80, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial Black', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border: 8px solid var(--border-color);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 15px 30px var(--shadow-color);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.donate-btn {
+  background-color: var(--button-color);
+  color: white;
+  border: 5px solid var(--border-color);
+  padding: 15px 30px;
+  font-size: 24px;
+  font-weight: 900;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 0 auto 30px;
+  display: block;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.donate-btn:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.raised-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.raised-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin: 10px 0;
+  text-shadow: 3px 3px 0px var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.amount:hover {
+  transform: scale(1.1);
+  color: var(--secondary-color);
+}
+
+.progress-container {
+  width: 100%;
+  height: 30px;
+  background-color: var(--progress-bg);
+  border: 4px solid var(--border-color);
+  border-radius: 20px;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(45deg, var(--progress-fill), var(--secondary-color));
+  border-radius: 15px;
+  transition: width 2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.target-info {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+.thank-you {
+  text-align: center;
+  font-size: 16px;
+  color: var(--secondary-color);
+  margin: 20px 0;
+  font-style: italic;
+  transform: rotate(-2deg);
+}
+
+.info-section {
+  margin: 30px 0;
+}
+
+.info-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.info-box {
+  background-color: var(--accent-color);
+  border: 5px solid var(--border-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-box:hover {
+  background-color: var(--secondary-color);
+  transform: translateX(10px) rotate(1deg);
+  box-shadow: -10px 10px 0px var(--primary-color);
+}
+
+.info-box.village {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.info-box.village:hover {
+  background-color: var(--button-hover);
+}
+
+.info-box.nepal {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.info-box.nepal:hover {
+  background-color: var(--primary-color);
+}
+
+.info-box.cycling {
+  background-color: var(--accent-color);
+}
+
+.info-box.cycling:hover {
+  background-color: var(--progress-fill);
+  color: white;
+}
+
+.church-info {
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-color);
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.bottom-donate {
+  margin-top: 30px;
+}
+
+/* Pulse animation for donate buttons */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(231, 76, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+.donate-btn:focus {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 650px) {
+  .container {
+      margin: 10px;
+      padding: 20px;
+      border-width: 5px;
+  }
+  
+  .amount {
+      font-size: 36px;
+  }
+  
+  .donate-btn {
+      font-size: 20px;
+      padding: 12px 25px;
+  }
+}
