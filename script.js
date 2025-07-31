@@ -1,20 +1,37 @@
-
 // Fundraising data
-let currentRaised = 0;
-const target = 2500;
-const increment = 50;
+let currentRaised = 60;
+const target = 600;
 
 // Initialize the page
 window.onload = function() {
-    // Start with £1000 as shown in the image
-    currentRaised = 1000;
-    updateDisplay();
+  firstDisplay();
     
     // Simulate gradual fundraising progress
     setTimeout(() => {
-        animateToAmount(1000);
+        animateToAmount(currentRaised);
     }, 500);
 };
+
+function firstDisplay(params) {
+  const amountElement = document.getElementById('currentAmount');
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const percentageText = document.getElementById('percentageText');
+  
+  // Update amount with animation
+  amountElement.textContent = `£0`;
+  
+  // Calculate percentage
+  let percentage = Math.min((currentRaised / target) * 100, 100);
+  
+  // Update progress bar
+  progressBar.style.width = percentage + '%';
+  
+  // Update text
+  progressText.textContent = `£0 of £${target.toLocaleString()} target`;
+
+  percentageText.textContent = '0%';
+}
 
 function updateDisplay() {
     const amountElement = document.getElementById('currentAmount');
@@ -26,13 +43,14 @@ function updateDisplay() {
     amountElement.textContent = `£${currentRaised.toLocaleString()}`;
     
     // Calculate percentage
-    const percentage = Math.min((currentRaised / target) * 100, 100);
+    let percentage = Math.min((currentRaised / target) * 100, 100);
     
     // Update progress bar
     progressBar.style.width = percentage + '%';
     
     // Update text
     progressText.textContent = `£${currentRaised.toLocaleString()} of £${target.toLocaleString()} target`;
+
     percentageText.textContent = Math.round(percentage) + '%';
 }
 
@@ -57,36 +75,6 @@ function animateToAmount(targetAmount) {
     }
     
     animate();
-}
-
-function handleDonation() {
-    // Simulate a donation
-    const donationAmount = Math.floor(Math.random() * 200) + 25; // Random donation between £25-£225
-    const newTotal = Math.min(currentRaised + donationAmount, target);
-    
-    // Animate to new amount
-    animateToAmount(newTotal);
-    
-    // Show feedback
-    const button = event.target;
-    const originalText = button.textContent;
-    button.textContent = `+£${donationAmount}!`;
-    button.style.backgroundColor = 'var(--progress-fill)';
-    
-    setTimeout(() => {
-        button.textContent = originalText;
-        button.style.backgroundColor = 'var(--button-color)';
-    }, 1500);
-}
-
-function showInfo(type) {
-    const messages = {
-        nepal: "🏔️ Supporting communities in Nepal through sustainable development projects and disaster relief efforts.",
-        village: "🏘️ Building essential infrastructure and providing resources for rural villages in need.",
-        cycling: "🚴‍♂️ Cycling challenge to raise awareness and funds - every mile counts towards our goal!"
-    };
-    
-    alert(messages[type]);
 }
 
 // Add some interactive elements

@@ -12,53 +12,78 @@
     <title>Nepal Fundraiser 2025</title>
 </head>
 <body>
-    <div class="container">
-        <button class="donate-btn" onclick="handleDonation()">DONATE</button>
+  <div class="container">
+    <a href="https://givealittle.co/c/76x2CZUWVclXtYZFkgKdEm" class="donate-btn">DONATE</a>
+    
+    <div class="raised-section">
+        <div class="raised-text">WE HAVE RAISED</div>
+        <div class="amount" id="currentAmount">£0</div>
         
-        <div class="raised-section">
-            <div class="raised-text">WE HAVE RAISED</div>
-            <div class="amount" id="currentAmount">£0</div>
-            
+        <div class="progress-section">
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
             
             <div class="target-info">
-                <span id="progressText">£0 of £2,500 target</span> • <span id="percentageText">0%</span>
+                <span id="progressText">£0 of £0 target</span> • <span id="percentageText">0%</span>
             </div>
             
             <div class="thank-you">Thank you</div>
         </div>
-
-        <div class="info-section">
-            <div class="info-header">What we are raising for</div>
-            
-            <div class="info-box nepal" onclick="showInfo('nepal')">
-                PICTURE of NEPAL<br>
-                <small>The details of the event</small>
-            </div>
-            
-            <div class="info-box village" onclick="showInfo('village')">
-                PICTURE<br>
-                Village
-            </div>
-            
-            <div class="church-info">
-                Working with<br>
-                Family Church<br>
-                (Empower Global)<br>
-                gift aid
-            </div>
-            
-            <div class="info-box cycling" onclick="showInfo('cycling')">
-                PICTURE<br>
-                Cycling
-            </div>
-        </div>
-
-        <button class="donate-btn bottom-donate" onclick="handleDonation()">DONATE</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="info-section">
+        
+        <div class="info-item">
+            <div class="info-box nepal">
+                <img class="info-image" src="img/landscape.jpeg" alt="Mountains in Nepal with sun coming over, sunrise"></img>
+            </div>
+            <div class="info-text">
+              <span>I am raising money to support communities in Nepal.</span>
+              <span>100% of your money will go towards the work of the project.</span>
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <div class="info-box village">
+                <img class="info-image" src="img/nepal-people.jpeg" alt="Nepali people being given new shoes"></img>
+            </div>
+            <div class="info-text">
+                  Your money will provide shoes, education equipment and hygiene products to people in rural villages. Also music and sound equipment for a local church in Pokhara.
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <div class="info-box cycling">
+              <img class="info-image" src="img/cycle.jpeg" alt="Upside down bike"></img>
+            </div>
+            <div class="info-text">
+              <div class="info-text-flex">
+                <span>THE CHALLENGE</span>
+                <span>12 hours</span>
+                <span>on a stationary bike</span>
+                <span>in Portsmouth city center!</span>
+                <span>How many miles will I cycle?</span>
+                <span>Not much if try riding the bike like this...</span>
+              </div>
+              <div class="svg-container">
+                <svg width="100" height="50" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" class="bold-arrow">
+                  <polygon points="30,25 70,5 70,20 100,20 100,30 70,30 70,45" />
+                </svg>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="church-info">
+        <span>Working in partnership with</span>
+        <a href="https://family.church/">
+          <img class="" src="img/fc logo.png" alt="family church">
+        </a>
+    </div>
+
+    <a href="https://givealittle.co/c/76x2CZUWVclXtYZFkgKdEm" class="donate-btn bottom-donate">DONATE</a>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
