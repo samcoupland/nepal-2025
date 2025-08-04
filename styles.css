@@ -13,7 +13,7 @@
     --border-color: #2C3E50;
     --shadow-color: rgba(44, 62, 80, 0.3);
     --cloud-colour: rgba(192, 57, 43, 0.3);
-    color-scheme: light;
+    color-scheme: only light;
 }
 
 * {
