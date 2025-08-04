@@ -395,7 +395,8 @@ body {
     .stamp {
         position: relative;
         margin-top: 15px;
-        right: 0;
+        left: 0;
         transform: translateY(0) translateX(0) rotate(0);
+        padding: 15px 15px;
     }
 }
