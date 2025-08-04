@@ -407,6 +407,7 @@ body {
         left: 0;
         transform: translateY(0) translateX(0) rotate(0);
         padding: 15px 15px;
+        color: var(--secondary-color);
     }
 
     .stamp:hover {
