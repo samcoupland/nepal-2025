@@ -384,6 +384,10 @@ body {
         margin-top: 15px;
     }
 
+    .thank-you:hover {
+        transform: translateY(0) translateX(0) rotate(0) scale(1.1);
+    }
+
     .bold-arrow-container {
         justify-content: center;
         margin-top: 20px;
@@ -393,11 +397,19 @@ body {
         transform: rotate(92deg);
     }
 
+    .bold-arrow:hover {
+        transform: rotate(92deg) scale(1.1);
+    }
+
     .stamp {
         position: relative;
         margin-top: 15px;
         left: 0;
         transform: translateY(0) translateX(0) rotate(0);
         padding: 15px 15px;
+    }
+
+    .stamp:hover {
+        transform: translateY(0) translateX(0) rotate(0) scale(1.1);
     }
 }
