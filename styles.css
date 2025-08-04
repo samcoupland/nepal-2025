@@ -304,10 +304,10 @@ body {
     padding: 25px 25px;
     font-size: 28px;
     font-weight: bold;
-    color: var(--background-color);
+    color: var(--secondary-color);
     text-align: center;
     letter-spacing: 2px;
-    background-color: rgba(196, 30, 58, 0.05);
+    background-color: var(--background-color);
     border: 5px solid var(--secondary-color);
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -407,7 +407,6 @@ body {
         left: 0;
         transform: translateY(0) translateX(0) rotate(0);
         padding: 15px 15px;
-        color: var(--secondary-color);
     }
 
     .stamp:hover {
