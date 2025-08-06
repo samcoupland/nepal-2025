@@ -1,5 +1,5 @@
 // Fundraising data
-let currentRaised = 405;
+let currentRaised = 430;
 const target = 600;
 
 // Initialize the page
