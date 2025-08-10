@@ -12,7 +12,7 @@ window.onload = function () {
 
 		// Check every 100ms until target reached
 		const checkInterval = setInterval(() => {
-			if (currentRaised > target) {
+			if (currentRaised >= target) {
 				clearInterval(checkInterval); // stop checking
 				startFireworks();
 				document
