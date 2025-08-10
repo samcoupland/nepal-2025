@@ -1,6 +1,7 @@
 // Fundraising data
 let currentRaised = 600;
 const target = 600;
+const stretchTarget = 1000;
 
 // Initialize the page
 window.onload = function () {
@@ -11,12 +12,17 @@ window.onload = function () {
 
 		// Check every 100ms until target reached
 		const checkInterval = setInterval(() => {
-			if (currentRaised === target) {
+			if (currentRaised > target) {
 				clearInterval(checkInterval); // stop checking
 				startFireworks();
 				document
 					.getElementById("currentAmount")
 					.classList.add("shimmer");
+					setTimeout(() => {
+						document.querySelectorAll('.hidden').forEach(el => {
+							el.classList.remove('hidden');
+						})
+					}, 2000);
 			}
 		}, 100);
 	}, 500);
@@ -32,10 +38,12 @@ function firstDisplay(params) {
 	amountElement.textContent = `£0`;
 
 	// Calculate percentage
-	let percentage = Math.min((currentRaised / target) * 100, 100);
+	let percentage = Math.round((currentRaised) / target * 100);
+	
+	let barPercentage = 0;
 
 	// Update progress bar
-	progressBar.style.width = percentage + "%";
+	progressBar.style.width = barPercentage + "%";
 
 	// Update text
 	progressText.textContent = `£0 of £${target.toLocaleString()} target`;
@@ -53,10 +61,12 @@ function updateDisplay() {
 	amountElement.textContent = `£${currentRaised.toLocaleString()}`;
 
 	// Calculate percentage
-	let percentage = Math.min((currentRaised / target) * 100, 100);
+	let percentage = Math.round(currentRaised / target * 100);
+
+  let barPercentage = Math.round((currentRaised - target) / (stretchTarget - target) * 100);
 
 	// Update progress bar
-	progressBar.style.width = percentage + "%";
+	progressBar.style.width = barPercentage + "%";
 
 	// Update text
 	progressText.textContent = `£${currentRaised.toLocaleString()} of £${target.toLocaleString()} target`;
@@ -303,7 +313,7 @@ function startFireworks() {
 	// Auto-stop after 8 seconds
 	setTimeout(() => {
 		stopFireworks();
-	}, 4000);
+	}, 6000);
 }
 
 // Stop fireworks
