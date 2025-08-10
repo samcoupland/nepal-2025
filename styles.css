@@ -30,6 +30,14 @@ body {
     padding: 20px;
 }
 
+#fireworksCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
 .background-svg {
     position: fixed;
     top: 0;
@@ -151,6 +159,10 @@ body {
 @keyframes shimmer {
     0% { left: -100%; }
     100% { left: 100%; }
+}
+
+.shimmer {
+    animation: shimmer 1.5s infinite;
 }
 
 .target-info {
