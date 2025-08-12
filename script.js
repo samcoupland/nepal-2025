@@ -75,6 +75,7 @@ function updateDisplay() {
 }
 
 function animateToAmount(targetAmount) {
+	currentRaised = 0;
 	const startAmount = 0;
 	const duration = 2000; // 2 seconds
 	const startTime = Date.now();
