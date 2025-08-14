@@ -1,5 +1,5 @@
 // Fundraising data
-let currentRaised = 650;
+let currentRaised = 681;
 const target = 600;
 const stretchTarget = 1000;
 
