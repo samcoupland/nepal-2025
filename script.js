@@ -1,5 +1,5 @@
 // Fundraising data
-let currentRaised = 1000000;
+let currentRaised = 1225;
 const target = 600;
 const stretchTarget = 1000;
 
@@ -18,11 +18,11 @@ window.onload = function () {
 				document
 					.getElementById("currentAmount")
 					.classList.add("shimmer");
-					setTimeout(() => {
-						document.querySelectorAll('.hidden').forEach(el => {
-							el.classList.remove('hidden');
-						})
-					}, 2000);
+				setTimeout(() => {
+					document.querySelectorAll(".hidden").forEach((el) => {
+						el.classList.remove("hidden");
+					});
+				}, 2000);
 			}
 		}, 100);
 	}, 500);
@@ -38,8 +38,8 @@ function firstDisplay(params) {
 	amountElement.textContent = `£0`;
 
 	// Calculate percentage
-	let percentage = Math.round((currentRaised) / target * 100);
-	
+	let percentage = Math.round((currentRaised / target) * 100);
+
 	let barPercentage = 0;
 
 	// Update progress bar
@@ -61,9 +61,11 @@ function updateDisplay() {
 	amountElement.textContent = `£${currentRaised.toLocaleString()}`;
 
 	// Calculate percentage
-	let percentage = Math.round(currentRaised / target * 100);
+	let percentage = Math.round((currentRaised / target) * 100);
 
-  let barPercentage = Math.round((currentRaised - target) / (stretchTarget - target) * 100);
+	let barPercentage = Math.round(
+		((currentRaised - target) / (stretchTarget - target)) * 100
+	);
 
 	// Update progress bar
 	progressBar.style.width = barPercentage + "%";
